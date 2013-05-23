@@ -48,7 +48,7 @@
 \RequirePackage[scaled=0.92]{helvet} %
 \RequirePackage{courier}%
 \RequirePackage[T1]{fontenc}%
-\RequirePackage[latin1]{inputenc} %
+\RequirePackage[utf8]{inputenc} %
 \RequirePackage[ngerman]{babel}%
 
 \RequirePackage[intlimits,fleqn]{amsmath}%

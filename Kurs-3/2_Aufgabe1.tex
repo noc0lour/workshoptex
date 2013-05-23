@@ -2,9 +2,31 @@
 
 \subsection{Aufgabenbeschreibung}
 
+Mit der Temperaturmessschaltung soll eine gemessene Spannung zur Steuerung einer zweistufigen Belüftungsanlage (hier simuliert durch zwei LEDs) verwendet werden. Bei einer bestimmten Temperatur soll zunächst der erste Lüfter, bei weiter steigender Temperatur ein zusätzlicher in Betrieb gehen. Hierfür ist es notwendig, sich zuerst über verschiedene Messschaltungen Gedanken zu machen, sowie sich über geeignete temperaturabhängige Bauteile zu informieren.
+
 \subsection{Recherche zu Temperatursensoren}
+%Sarangan macht die Recherche - bitte hier einfuegen
 Hier stehen Ihre Rechercheergebnisse
+
 \subsection{L"ufterschaltung}
+
+\subsubsection{Dimensionierung der Messschaltung}
+
+Für die Dimensionierung der Messschaltung müssen zunächst Überlegungen angestellt werden, unter welchen Randbedingungen die Messschaltung betrieben wird.\\
+Es wird angenommen, dass die Belüftungsanlage zur Belüftung eines Gebäudes oder Raumes verwendet wird. Dadurch ergeben sich Temperaturen von etwa 10°C bis etwa 45°C. Als Extremfall sollen 0°C und 55°C angenommen werden.\\
+Dem Datenblatt des eingesetzten NTCs entnommen kann der NTC im Bereich zwischen 0°C und 55°C 100\% der Maximalleistung von \(P_{max} =\) 500mW vertragen.\\
+Die Widerstände \(R_T\) des NTCs bei verschiedenen Temperaturen T können dem Datenblatt des NTCs entnommen werden.
+\begin{align}
+bei\ T&=\ 0^{\circ} C:\ &I_{max1} &= \sqrt{\frac{P_{max}}{R_0}} &= \sqrt{\frac{500mW}{325k\Omega}} &= 3,92mA\\
+bei\ T&=\ 55^{\circ} C:\ &I_{max2} &= \sqrt{\frac{P_{max}}{R_{55}}} &= \sqrt{\frac{500mW}{3k\Omega}} &= 12,9mA 
+\end{align}
+
+Um zu überprüfen ob der Widerstand im Spannungsteiler eine Mindestgröße benötigt, wird berechnet welcher Strom durch den NTC bei T=0°C bzw. T=55°C abfällt wenn kein Widerstand verwendet wird.\\
+
+\begin{align}
+&I_0 &=\frac{U_0}{R_0}&=\frac{10V}{32,5k\Omega}&=0,3mA
+\\&I_{55} &=\frac{U_0}{R_{55}}&=\frac{10V}{3k\Omega}&=3,3mA
+\end{align}
 
 \begin{itemize}
 	\item Orientieren Sie sich an der Aufgabenstellung
