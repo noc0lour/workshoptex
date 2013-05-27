@@ -1,0 +1,22 @@
+* C:\Users\Andy\Documents\git\workshoptex\spice\NTC.asc
+R1 N001 Ue {R}
+R2 Ue 0 600
+Q1 N002 P001 0 0 NPN
+V1 N001 0 10
+RV1 P002 N002 330
+D§LED1 N001 P002 D
+Q2 N003 N004 P003 0 NPN
+RV2 P004 N003 330
+D§LED2 N001 P004 D
+D2 P003 0 D
+R5 N004 Ue 1k
+R6 P001 Ue 1k
+.model D D
+.lib E:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib E:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.bjt
+.step param R 10k 1k 200
+.op
+.backanno
+.end
