@@ -28,10 +28,27 @@ Um zu überprüfen ob der Widerstand im Spannungsteiler eine Mindestgröße ben�
 \\&I_{55} &=\frac{U_0}{R_{55}}&=\frac{10V}{3k\Omega}&=3,3mA
 \end{align}
 
-\begin{itemize}
-	\item Orientieren Sie sich an der Aufgabenstellung
-	\item Untergliedern Sie problemorientiert in die einzelnen Teilaufgaben, bitte keine chronologische T"atigkeitsbeschreibung.
-	\item Problemdefinition, L"osungsansatz, Verifikation
-	\item Vergessen Sie nicht als Beleg die Grafiken einzubinden
-\end{itemize}
+Das heisst: Bei jedem beliebigen Widerstand R, im gültigen Arbeitsbereich zwischen T=0°C und T=55°C, fliesst nicht genügend Strom um den NTC über seine Leistungsgrenze zu belasten.
+Der Widerstand R ist somit für die Anwendung frei wählbar.
+
+Für die Anwendung wird angenommen, dass der erste Lüfter bei einer Temperatur von etwa 30°C schalten soll. Für diese Temperatur hat der NTC einen Widerstand von \(R_{30} = 8059 \Omega\) für R ergibt sich dann mit der Spannungsteilerregel:
+\begin{align}
+R=\frac{U_R}{U_0-U_R}\cdot R_{30} = \frac{0,7V}{10V-0,7V}\cdot 8059\Omega \approx 600\Omega
+\end{align}
+
+Die maximale bzw. minimale Spannung über R beträgt mit der Wahl von R:
+
+\begin{align}
+U_{R_{max}} = \frac{R}{R_{55}+R}\cdot U_0 = \frac{600\Omega}{2989\Omega + 600\Omega}\cdot 10V = 1,67V\\
+U_{R_{min}} = \frac{R}{R_{0}+R}\cdot U_0 = \frac{600\Omega}{32500\Omega + 600\Omega}\cdot 10V = 0,18V
+\end{align}
+
+\subsubsection{Aufbau der Messschaltung}
+
+Den Schaltzeitpunkt der ersten LED/des ersten Lüfters kann durch einen Transistor in Emitterschaltung erfolgen, da der bipolare Transistor ab einer Basis-Emitter-Spannung von 0,7V die Kollektor-Emitter-Diode durchschaltet.\\
+Die Basisstrombegrenzung lässt sich mit einem \(1k\Omega\) Widerstand vor der Basis verwirklichen. So fließt nur unwesentlich Strom in die Basis ab und der Spannungsteiler wird nicht stark belastet.\\
+
+Die zweite Stufe mit der zweiten LED/des zweiten Lüfters kann durch einen zweiten Transistor in Emitterschaltung und zusätzlicher Diode am Emitter realisiert werden. Ein Vorwiderstand an der Basis zur Basisstrombegrenzung muss auch eingesetzt werden.\\
+Durch die Diode am Emitter wird der benötigte Spannungsabfall über der Basis-Emitter des zweiten Transistors auf 1,4V erhöht. Dadurch kann der Schaltzeitpunkt der zweiten LED auch eingestellt werden. 
+
 \subsection{Zusammenfassung}
